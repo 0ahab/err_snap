@@ -1,6 +1,6 @@
 [Core]
 Name = GetSnap
-Module = getsnap
+Module = err_snap
 
 [Python]
 Version = 2+
