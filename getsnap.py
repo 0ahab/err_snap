@@ -10,8 +10,8 @@ class GetSnap(BotPlugin):
 		get_snap, err = subprocess.Popen(get_snap_cmd, shell=True, stdout=subprocess.PIPE).communicate()
 		file_line = get_snap.splitlines()[-1]
 		filename = file_line.split('/')[-1]
-		get_key_name = 'ls ~/.ssh/ | grep -i digital | grep -vi pub'
-		key_name, err = subprocess.Popen(get_key_name, shell=True, stdout=subprocess.PIPE).communicate()
+		# get_key_name = 'ls ~/.ssh/ | grep -i digital | grep -vi pub'
+		# key_name, err = subprocess.Popen(get_key_name, shell=True, stdout=subprocess.PIPE).communicate()
 
 		# clean_key_name = key_name.replace('\n', '')
 
