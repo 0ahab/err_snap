@@ -13,9 +13,9 @@ class GetSnap(BotPlugin):
 		get_key_name = 'ls ~/.ssh/ | grep -i digital | grep -vi pub'
 		key_name, err = subprocess.Popen(get_key_name, shell=True, stdout=subprocess.PIPE).communicate()
 
-		key_name = key_name.replace('\n', '')
+		clean_key_name = key_name.replace('\n', '')
 
-		up_snap_cmd = 'scp ~/' + filename + ' -i ~/.ssh/'+key_name +' reverse@`host appdev.0ahab.net ns3.digitalocean.com | grep has.address | awk \'{print $4}\'`:./'
+		up_snap_cmd = 'scp -i ~/.ssh/'+clean_key_name +' ~/' + filename + ' reverse@'+args[0]':./'
 		up_snap = subprocess.Popen(up_snap_cmd, shell=True, stdout=subprocess.PIPE).communicate()
 
 		return("File uploaded.")
