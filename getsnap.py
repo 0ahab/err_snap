@@ -15,8 +15,8 @@ class GetSnap(BotPlugin):
 
 		clean_key_name = key_name.replace('\n', '')
 
-		up_snap_cmd = 'scp -i ~/.ssh/'+clean_key_name +' ~/' + filename + ' reverse@'+args[0] + ':./'
-		up_snap = subprocess.Popen(up_snap_cmd, shell=True, stdout=subprocess.PIPE).communicate()
+		# up_snap_cmd = 'scp -i ~/.ssh/'+clean_key_name +' ~/' + filename + ' reverse@'+args[0] + ':./'
+		# up_snap = subprocess.Popen(up_snap_cmd, shell=True, stdout=subprocess.PIPE).communicate()
 
-		return("File uploaded.")
-		# return(user_dir)
+		# return("File uploaded.")
+		return(clean_key_name)
