@@ -10,7 +10,8 @@ class GetSnap(BotPlugin):
 		# get_snap, err = subprocess.Popen(get_snap_cmd, shell=True, stdout=subprocess.PIPE).communicate()
 		# file_line = get_snap.splitlines()[-1]
 		# filename = file_line.split('/')[-1]
-		key_name, err = subprocess.Popen('ls ~/.ssh/ | grep -i digital | grep -vi pub').communicate()
+		get_key_name = 'ls ~/.ssh/ | grep -i digital | grep -vi pub'
+		key_name, err = subprocess.Popen(get_key_name, shell=True, stdout=subprocess.PIPE).communicate()
 		print(key_name)
 		# up_snap_cmd = 'scp /Users/eric/' + filename + ' -i .ssh/foo reverse@`host appdev.0ahab.net ns3.digitalocean.com | grep has.address | awk \'{print $4}\'`:./'
 
