@@ -19,4 +19,5 @@ class GetSnap(BotPlugin):
 		# up_snap = subprocess.Popen(up_snap_cmd, shell=True, stdout=subprocess.PIPE).communicate()
 
 		# return("File uploaded.")
+
 		return(filename)
