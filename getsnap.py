@@ -12,7 +12,7 @@ class GetSnap(BotPlugin):
 		# filename = file_line.split('/')[-1]
 		get_key_name = 'ls ~/.ssh/ | grep -i digital | grep -vi pub'
 		key_name, err = subprocess.Popen(get_key_name, shell=True, stdout=subprocess.PIPE).communicate()
-		print(key_name)
+		return(key_name)
 		# up_snap_cmd = 'scp /Users/eric/' + filename + ' -i .ssh/foo reverse@`host appdev.0ahab.net ns3.digitalocean.com | grep has.address | awk \'{print $4}\'`:./'
 
 		# return(user_dir)
